@@ -1,0 +1,28 @@
+/* Add your global styles here */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: #282c34;
+    color: white;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .cartLink {
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .productList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 2rem;
+  }
+  
