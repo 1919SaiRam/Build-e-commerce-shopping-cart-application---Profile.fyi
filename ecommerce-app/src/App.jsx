@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import CartPage from './pages/CartPage';
+import CheckoutPage from './pages/CheckoutPage';
+import ConfirmationPage from './pages/ConfirmationPage';
 import Navbar from './components/Navbar';
 import './styles/App.module.css';
 
@@ -47,6 +49,11 @@ function App() {
             />
           }
         />
+        <Route
+          path="/checkout"
+          element={<CheckoutPage cartItems={cartItems} />}
+        />
+        <Route path="/confirmation" element={<ConfirmationPage />} />
       </Routes>
     </Router>
   );
