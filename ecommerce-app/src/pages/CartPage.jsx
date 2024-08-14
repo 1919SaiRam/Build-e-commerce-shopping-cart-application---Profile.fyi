@@ -4,7 +4,7 @@ import Cart from '../components/Cart';
 function CartPage({ cartItems, removeFromCart, updateQuantity }) {
   return (
     <div>
-      <h1>Your Cart</h1>
+      <h1>Cart Page:</h1>
       <Cart
         cartItems={cartItems}
         removeFromCart={removeFromCart}

@@ -1,4 +1,4 @@
-.confirmationPage {
+/* .confirmationPage {
     padding: 20px;
     font-family: Arial, sans-serif;
   }
@@ -32,5 +32,38 @@
   
   .total h3 {
     margin: 0;
+  }
+   */
+
+   .confirmationPage {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .cartItems {
+    margin-top: 2rem;
+  }
+  
+  .cartItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 1rem;
+  }
+  
+  .cartItemImage {
+    max-width: 100px;
+    margin-right: 1rem;
+  }
+  
+  .cartItemDetails {
+    flex-grow: 1;
+    text-align: left;
+  }
+  
+  .totalPrice {
+    font-size: 1.5rem;
+    margin-top: 2rem;
   }
   
