@@ -25,7 +25,8 @@ function Cart({ cartItems, removeFromCart, updateQuantity }) {
         />
       ))}
       <div className={styles.cartSummary}>
-        <p>Subtotal: ${calculateSubtotal()}</p>
+        <p>Subtotal: ${calculateSubtotal()}</p>                                    
+                       {/* /// ₹₹₹₹₹₹₹₹₹₹₹₹₹₹₹₹₹₹₹₹₹₹₹₹₹ - ₹ */}
         {/* Add discount calculation and final total here */}
         <button onClick={handleCheckout} className={styles.checkoutButton}>
           Checkout

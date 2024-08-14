@@ -8,19 +8,21 @@ function CheckoutPage({ cartItems }) {
   const [customDiscount, setCustomDiscount] = useState(0);
   const navigate = useNavigate();
 
+  // Calculate the subtotal of items in the cart
   const calculateSubtotal = () => {
     return cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(2);
   };
 
+  // Calculate the discount based on the selected discount type
   const calculateDiscount = (subtotal) => {
     let discountAmount = 0;
 
     switch (discountType) {
       case 'fixed':
-        discountAmount = discount;
+        discountAmount = discount; // Fixed discount amount
         break;
       case 'percentage':
-        discountAmount = (subtotal * discount) / 100;
+        discountAmount = (subtotal * discount) / 100; // Percentage-based discount
         break;
       case 'bogo': // Buy 1 Get 1 Free
         discountAmount = cartItems.reduce((acc, item) => {
@@ -34,7 +36,7 @@ function CheckoutPage({ cartItems }) {
         }
         break;
       case 'custom':
-        discountAmount = customDiscount;
+        discountAmount = customDiscount; // Custom discount amount
         break;
       default:
         break;
@@ -43,19 +45,25 @@ function CheckoutPage({ cartItems }) {
     return discountAmount;
   };
 
+  // Calculate the final total after applying the discount
   const calculateTotal = () => {
     const subtotal = parseFloat(calculateSubtotal());
     const discountAmount = calculateDiscount(subtotal);
     return (subtotal - discountAmount).toFixed(2);
   };
 
+  // Handle checkout process and navigate to confirmation page
   const handleCheckout = () => {
+    if (cartItems.length === 0) {
+      alert("Your cart is empty! Please add items before checking out.");
+      return;
+    }
     navigate('/confirmation', { state: { cartItems, total: calculateTotal() } });
   };
 
   return (
     <div className={styles.checkoutPage}>
-      <h1>Cart Summary Section : </h1>
+      <h1>Cart Summary Section:</h1>
       <div className={styles.cartItems}>
         {cartItems.map((item) => (
           <div key={item.id} className={styles.cartItem}>
