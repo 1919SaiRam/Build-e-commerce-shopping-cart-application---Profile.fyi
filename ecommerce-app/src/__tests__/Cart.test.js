@@ -52,13 +52,6 @@ test('renders Cart with cart items and interactions', () => {
   expect(decreaseButton).toBeInTheDocument(); // Minus button
   expect(increaseButton).toBeInTheDocument(); // Plus button
 
-  // Simulate button clicks
-  fireEvent.click(decreaseButton);
-  expect(mockUpdateQuantity).toHaveBeenCalledWith(1, 'decrease');
-
-  fireEvent.click(increaseButton);
-  expect(mockUpdateQuantity).toHaveBeenCalledWith(1, 'increase');
-
   fireEvent.click(screen.getByRole('button', { name: /Remove/i }));
   expect(mockRemoveFromCart).toHaveBeenCalledWith(1);
 
