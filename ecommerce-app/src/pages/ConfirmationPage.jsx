@@ -1,28 +1,31 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
-import styles from '../styles/Cart.module.css';
+import styles from '../styles/ConfirmationPage.module.css'; // Path to CSS module
 
-function ConfirmationPage() {
-  const location = useLocation();
-  const cartItems = location.state?.cartItems || [];
+function ConfirmationPage({ cartItems }) {
+  const calculateSubtotal = () => {
+    return cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(2);
+  };
 
   return (
-    <div className={styles.cart}>
-      <h2>Order Confirmed!</h2>
+    <div className={styles.confirmationPage}>
+      <h1>Order Confirmation !</h1>
       <p>Thank you for your purchase. Your order has been placed successfully.</p>
       <p>You will receive an email confirmation shortly.</p>
-      {cartItems.length > 0 && (
-        <div>
-          <h3>Your Order Summary:</h3>
-          <ul>
-            {cartItems.map((item) => (
-              <li key={item.id}>
-                {item.title} - {item.quantity} x ${item.price.toFixed(2)}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+      <div className={styles.orderSummary}>
+        {cartItems.map((item) => (
+          <div key={item.id} className={styles.orderItem}>
+            <img src={item.image} alt={item.title} className={styles.orderItemImage} />
+            <div className={styles.orderItemDetails}>
+              <h3>{item.title}</h3>
+              <p>Quantity: {item.quantity}</p>
+              <p>Price: ${item.price.toFixed(2)}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className={styles.total}>
+        <h3>Total: ${calculateSubtotal()}</h3>
+      </div>
     </div>
   );
 }

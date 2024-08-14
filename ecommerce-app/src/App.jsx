@@ -49,11 +49,8 @@ function App() {
             />
           }
         />
-        <Route
-          path="/checkout"
-          element={<CheckoutPage cartItems={cartItems} />}
-        />
-        <Route path="/confirmation" element={<ConfirmationPage />} />
+        <Route path="/checkout" element={<CheckoutPage cartItems={cartItems} />} />
+        <Route path="/confirmation" element={<ConfirmationPage cartItems={cartItems} />} />
       </Routes>
     </Router>
   );
