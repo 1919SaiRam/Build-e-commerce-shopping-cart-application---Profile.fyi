@@ -93,4 +93,4 @@ Contributing:-
 
 Above all are the Provided guidelines for contributing to the project.
 
-# 🤝 Thanks for the Patience for Review 🙏
+# 🤝 Thanks for the Investing Valuable time & Patience for Review 🙏
