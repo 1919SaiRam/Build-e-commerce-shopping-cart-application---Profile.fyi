@@ -1,30 +1,38 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from '../styles/CheckoutPage.module.css';
+import ErrorMessage from '../components/ErrorMessage'; // Corrected import path
+
 
 function CheckoutPage({ cartItems }) {
   const [discount, setDiscount] = useState(0);
   const [discountType, setDiscountType] = useState('none');
   const [customDiscount, setCustomDiscount] = useState(0);
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  // Calculate the subtotal of items in the cart
   const calculateSubtotal = () => {
     return cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(2);
   };
 
-  // Calculate the discount based on the selected discount type
   const calculateDiscount = (subtotal) => {
     let discountAmount = 0;
 
+    if (discountType === 'fixed' || discountType === 'percentage' || discountType === 'custom') {
+      if (discount < 0 || customDiscount < 0) {
+        setError('Discount value cannot be negative.');
+        return 0;
+      }
+    }
+
     switch (discountType) {
       case 'fixed':
-        discountAmount = discount; // Fixed discount amount
+        discountAmount = discount;
         break;
       case 'percentage':
-        discountAmount = (subtotal * discount) / 100; // Percentage-based discount
+        discountAmount = (subtotal * discount) / 100;
         break;
-      case 'bogo': // Buy 1 Get 1 Free
+      case 'bogo':
         discountAmount = cartItems.reduce((acc, item) => {
           const freeItems = Math.floor(item.quantity / 2);
           return acc + freeItems * item.price;
@@ -32,11 +40,11 @@ function CheckoutPage({ cartItems }) {
         break;
       case 'bulk':
         if (subtotal > 100) {
-          discountAmount = (subtotal * 20) / 100; // 20% off on orders above $100
+          discountAmount = (subtotal * 20) / 100;
         }
         break;
       case 'custom':
-        discountAmount = customDiscount; // Custom discount amount
+        discountAmount = customDiscount;
         break;
       default:
         break;
@@ -45,17 +53,15 @@ function CheckoutPage({ cartItems }) {
     return discountAmount;
   };
 
-  // Calculate the final total after applying the discount
   const calculateTotal = () => {
     const subtotal = parseFloat(calculateSubtotal());
     const discountAmount = calculateDiscount(subtotal);
     return (subtotal - discountAmount).toFixed(2);
   };
 
-  // Handle checkout process and navigate to confirmation page
   const handleCheckout = () => {
     if (cartItems.length === 0) {
-      alert("Your cart is empty! Please add items before checking out.");
+      setError('Your cart is empty! Please add items before checking out.');
       return;
     }
     navigate('/confirmation', { state: { cartItems, total: calculateTotal() } });
@@ -63,6 +69,7 @@ function CheckoutPage({ cartItems }) {
 
   return (
     <div className={styles.checkoutPage}>
+      {error && <ErrorMessage message={error} />} {/* Display error message if present */}
       <h1>Cart Summary Section:</h1>
       <div className={styles.cartItems}>
         {cartItems.map((item) => (

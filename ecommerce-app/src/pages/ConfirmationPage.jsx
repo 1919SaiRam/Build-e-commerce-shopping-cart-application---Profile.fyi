@@ -1,12 +1,24 @@
-// src/pages/ConfirmationPage.jsx
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import styles from '../styles/ConfirmationPage.module.css';
+import ErrorMessage from '../components/ErrorMessage'; // Assuming you have created an ErrorMessage component
 
 function ConfirmationPage() {
   const location = useLocation();
-  // Provide default values if location.state is null or undefined
+  const navigate = useNavigate();
   const { cartItems = [], total = '0.00' } = location.state || {};
+
+  // Handle cases where cartItems or total might be missing or invalid
+  if (!location.state || cartItems.length === 0 || parseFloat(total) <= 0) {
+    return (
+      <div className={styles.confirmationPage}>
+        <ErrorMessage message="Invalid order details. Please return to the cart and try again." />
+        <button onClick={() => navigate('/cart')} className={styles.backToCartButton}>
+          Back to Cart
+        </button>
+      </div>
+    );
+  }
 
   return (
     <div className={styles.confirmationPage}>
@@ -14,20 +26,16 @@ function ConfirmationPage() {
       <div className={styles.orderDetails}>
         <h3>🙏Thank you for your purchase!🤝</h3>
         <h2>Order Summary🥳:</h2>
-        {cartItems.length > 0 ? (
-          cartItems.map((item) => (
-            <div key={item.id} className={styles.cartItem}>
-              <img src={item.image} alt={item.title} className={styles.cartItemImage} />
-              <div className={styles.cartItemDetails}>
-                <h3>{item.title}</h3>
-                <p>Quantity: {item.quantity}</p>
-                <p>Price: ${item.price.toFixed(2)}</p>
-              </div>
+        {cartItems.map((item) => (
+          <div key={item.id} className={styles.cartItem}>
+            <img src={item.image} alt={item.title} className={styles.cartItemImage} />
+            <div className={styles.cartItemDetails}>
+              <h3>{item.title}</h3>
+              <p>Quantity: {item.quantity}</p>
+              <p>Price: ${item.price.toFixed(2)}</p>
             </div>
-          ))
-        ) : (
-          <p>No items to display</p>
-        )}
+          </div>
+        ))}
         <h3>Total Final Price Paid: ${total}</h3>
       </div>
     </div>
