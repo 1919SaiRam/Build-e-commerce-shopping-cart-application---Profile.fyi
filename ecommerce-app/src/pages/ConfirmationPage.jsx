@@ -37,6 +37,8 @@ function ConfirmationPage() {
           </div>
         ))}
         <h3>Total Final Price Paid: ${total}</h3>
+
+        <h1>Continue Shopping.... Please Click👆on E-Commerce</h1>
       </div>
     </div>
   );
