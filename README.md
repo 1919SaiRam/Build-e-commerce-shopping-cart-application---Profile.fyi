@@ -264,3 +264,59 @@ const App = () => {
 
 
 ---> For dymaically data rendering of products list need to create _---   .env file   # Environment variables (e.g., API URL for development)
+
+
+
+# for Build the backend :- ITs very usuable to make complete ecommerce-website as my learning with  scratc of Qkart-backend project ; with Node.js 
+
+We can be build backend for this buildout by creating the backend folder of follwing files ; such as 
+
+--> package.json
+
+--> Index.js
+
+--> routes/ Directory
+
+--> Configuration.js  ( config/ Directory ) 
+
+--> Controllers.js ( controllers/ Directory ) 
+
+--> middleware.js ( middlewares/ Directory ) 
+
+--> models.js  ( models/ Directory ) 
+
+--> utils/ Directory
+
+--> .env File
+
+--> tests/ Directory
+
+
+# Ex:-  index.js   :_   
+const express = require('express');
+const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+const userRoutes = require('./routes/userRoutes');
+const productRoutes = require('./routes/productRoutes');
+
+dotenv.config();
+
+const app = express();
+const PORT = process.env.PORT || 5000;
+
+// Middleware
+app.use(express.json());
+
+// Routes
+app.use('/api/users', userRoutes);
+app.use('/api/products', productRoutes);
+
+// Connect to the database
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log('Database connected'))
+    .catch(err => console.error('Database connection error:', err));
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
+
