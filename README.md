@@ -267,7 +267,7 @@ const App = () => {
 
 
 
-# for Build the backend :- ITs very usuable to make complete ecommerce-website as my learning with  scratc of Qkart-backend project ; with Node.js 
+# for Build the backend :- ITs very usable to make complete ecommerce-website as my learning with  scratc of Qkart-backend project ; with Node.js 
 
 We can be build backend for this buildout by creating the backend folder of follwing files ; such as 
 
@@ -320,3 +320,115 @@ app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
 
+
+
+
+# Finally this is my Project structure :- 
+
+/ecommerce-app
+
+  /backend
+  
+    /controllers
+    
+      productController.js      # Logic for handling product-related operations
+      
+    /models
+    
+      productModel.js           # Mongoose schema for products
+      
+    /routes
+    
+      products.js               # Routes for product-related API endpoints
+      
+    /config
+    
+      db.js                     # Database connection setup
+      
+    server.js                   # Entry point for the backend server
+    
+    package.json                # Backend dependencies
+    
+    .env                        # Environment variables (e.g., database URI)
+  
+
+ 
+    /src
+    
+      /components
+      
+        ProductList.jsx         # Component to display a list of products
+        
+        ProductCard.jsx         # Component to display individual product details
+        
+        Cart.jsx                # Component to manage the cart
+        
+        CartItem.jsx            # Component for individual cart items
+        
+        Navbar.jsx              # Navigation bar component
+        
+      /pages
+      
+        Home.jsx                # Home page component
+        
+        CartPage.jsx            # Cart page component
+        
+        CheckoutPage.jsx        # Checkout page component
+        
+        ConfirmationPage.jsx    # Confirmation page component
+        
+      /styles
+      
+        App.module.css          # Global app styles
+        
+        ProductCard.module.css  # Styles for the ProductCard component
+        
+        Cart.module.css         # Styles for the Cart component
+        
+        CheckoutPage.module.css # Styles for the CheckoutPage component
+        
+        ConfirmationPage.module.css # Styles for the ConfirmationPage component
+        
+      /data
+      
+        products.json           # Static data for products
+        
+      App.jsx                   # Main app component
+      
+      index.jsx                 # Entry point for the React application\
+      
+    /public
+    
+    /_tests_
+    
+      App.test.js               # Unit tests for App component
+      
+      Navbar.test.js            # Unit tests for Navbar component
+      
+      Home.test.js              # Unit tests for Home page component
+      
+      CartPage.test.js          # Unit tests for CartPage component
+      
+      CheckoutPage.test.js      # Unit tests for CheckoutPage component
+      
+      ConfirmationPage.test.js  # Unit tests for ConfirmationPage component
+      
+      ProductList.test.js       # Unit tests for ProductList component
+      
+      ProductCard.test.js       # Unit tests for ProductCard component
+      
+      Cart.test.js              # Unit tests for Cart component
+      
+      CartItem.test.js          # Unit tests for CartItem component
+      
+    package.json                # Frontend dependencies
+    
+    .env                        # Environment variables (e.g., API URL for development)
+    
+    .gitignore
+    
+    README.md
+
+  .gitignore
+  
+  README.md
