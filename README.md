@@ -188,3 +188,6 @@ const App = () => {
     setCartItems(updatedCart);
     localStorage.setItem('cart', JSON.stringify(updatedCart));
   };
+
+
+---> For dymaically data rendering of products list need to create _---   .env file   # Environment variables (e.g., API URL for development)
