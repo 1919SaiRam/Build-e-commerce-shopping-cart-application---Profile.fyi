@@ -327,29 +327,29 @@ app.listen(PORT, () => {
 
 /ecommerce-app
 
-  /backend
+    /backend
   
-    /controllers
+      /controllers
     
-      productController.js      # Logic for handling product-related operations
+         productController.js      # Logic for handling product-related operations
       
-    /models
+      /models
     
-      productModel.js           # Mongoose schema for products
+         productModel.js           # Mongoose schema for products
       
-    /routes
+      /routes
     
-      products.js               # Routes for product-related API endpoints
+         products.js               # Routes for product-related API endpoints
       
-    /config
+      /config
     
-      db.js                     # Database connection setup
+        db.js                     # Database connection setup
       
-    server.js                   # Entry point for the backend server
+       server.js                   # Entry point for the backend server
+     
+       package.json                # Backend dependencies
     
-    package.json                # Backend dependencies
-    
-    .env                        # Environment variables (e.g., database URI)
+       .env                        # Environment variables (e.g., database URI)
   
 
  
