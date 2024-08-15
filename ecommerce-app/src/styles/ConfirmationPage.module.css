@@ -1,32 +1,120 @@
-   .confirmationPage {
-    padding: 2rem;
-    text-align: center;
+/* Confirmation Page Styles */
+.confirmationPage {
+  padding: 2rem;
+  text-align: center;
+  font-family: 'Roboto', sans-serif; /* Modern font */
+  background: linear-gradient(to bottom right, #ffffff, #e3f2fd); /* Gradient background */
+  color: #333; /* Darker text for readability */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+}
+
+.confirmationPage:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Header Styles */
+.confirmationPage h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #4caf50; /* Green for success */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+}
+
+.confirmationPage h2 {
+  font-size: 2rem;
+  margin: 1.5rem 0;
+  color: #333;
+}
+
+.confirmationPage h3 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  color: #555;
+}
+
+/* Order Details Section */
+.orderDetails {
+  margin-top: 2rem;
+}
+
+/* Grid Layout for Cart Items */
+.cartItems {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 1.5rem; /* Space between grid items */
+  justify-content: center; /* Center grid items horizontally */
+  margin: 0 auto; /* Center grid container */
+  max-width: 1200px; /* Maximum width for larger screens */
+  padding: 1rem; /* Padding around the grid */
+  grid-auto-rows: minmax(250px, auto); /* Ensure items have minimum height */
+}
+
+/* Cart Item */
+.cartItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff; /* White background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+  overflow: hidden; /* Hide overflow to maintain square shape */
+  max-width: 300px; /* Fixed width for better layout control */
+  margin: 0 auto; /* Center each item within the grid */
+  padding: 1rem; /* Padding inside each cart item */
+  height: 100%; /* Ensure items stretch to fill grid cells */
+}
+
+/* Hover Effects */
+.cartItem:hover {
+  background-color: #f9f9f9; /* Light background on hover */
+  transform: scale(1.05); /* Slight scale-up effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Image with Full Visibility */
+.cartItemImage {
+  width: 100%;
+  height: 200px; /* Fixed height for images */
+  object-fit: cover; /* Ensure image covers the container */
+  transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transitions */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Image Hover Effects */
+.cartItemImage:hover {
+  transform: scale(1.1); /* Zoom-in effect */
+  filter: brightness(1.1); /* Increase brightness */
+}
+
+/* Cart Item Details */
+.cartItemDetails {
+  padding: 1rem;
+  text-align: center; /* Center-align text for consistency */
+}
+
+/* Total Price */
+.totalPrice {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  font-weight: bold;
+  color: #4caf50; /* Green for the total amount */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+}
+
+/* Responsive Design Tweaks */
+@media (max-width: 600px) {
+  .confirmationPage {
+    padding: 1rem;
   }
-  
-  .cartItems {
-    margin-top: 2rem;
-  }
-  
-  .cartItem {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 1rem;
-  }
-  
+
   .cartItemImage {
-    max-width: 100px;
-    margin-right: 1rem;
+    height: 150px; /* Adjusted height for smaller screens */
   }
-  
-  .cartItemDetails {
-    flex-grow: 1;
-    text-align: left;
+
+  .cartItem {
+    max-width: 100%; /* Full-width for better layout control on small screens */
   }
-  
-  .totalPrice {
-    font-size: 1.5rem;
-    margin-top: 2rem;
-  }
-  
+}
