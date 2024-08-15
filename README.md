@@ -83,11 +83,14 @@ Provide steps to set up and run the project locally (e.g., dependencies, environ
 
 --> Usage:-
 
-Explain how to use the application (e.g., adding products, viewing cart, checking out).
+Explained how to use the application (e.g., adding products, viewing cart, checking out).
 
 Testing:
 
-Describe how to run tests and what testing tools are used.
+Describe how to run tests and what testing tools are used:-
+Use "npm test" for testing _tests_ for project !! 
+--> Testing with Jest and React Testing Library
+Jest Provides a robust test runner, mocking capabilities, and assertions. It integrates well with React through its official testing library.
 
 Contributing:- 
 
