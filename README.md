@@ -1,6 +1,6 @@
 # Build-e-commerce-shopping-cart-application---Profile.fyi
 
-# Let's find which is existed evaluation done to builded my project based on the provided criteria:-
+# Let's find which is existed evaluation done to builded the "Build-e-commerce-shopping-cart-application---Profile.fyi" project based on the provided criteria:-
 
 # 1. Code Logic and Cleanliness:
 Structure & Readability:
