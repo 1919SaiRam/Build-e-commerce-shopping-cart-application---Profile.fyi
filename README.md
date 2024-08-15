@@ -1,4 +1,33 @@
-# Build-e-commerce-shopping-cart-application---Profile.fyi
+# Build-e-commerce-shopping-cart-application---Profile.fyi :-
+
+# Home page :-Products list means list of items :-  
+![Screenshot (11)](https://github.com/user-attachments/assets/af6505cc-3a51-44b7-ac01-e127da663703)
+
+# After Add to Cart Functionality ; the User's Virtual Shopping Cart Page 
+![Screenshot (12)](https://github.com/user-attachments/assets/5c30f337-aef5-4e1d-ab75-247e2eaef0b3)
+
+# Afer Click checkout button - Cart Summary Section:- with adding discount on subtotal value of user selected items :- 
+![Screenshot (13)](https://github.com/user-attachments/assets/8c4264ce-a115-4c9a-972d-541127d5b229)
+
+# After click on confirmation to place order by the user :- 
+![Screenshot (14)](https://github.com/user-attachments/assets/73e8edeb-0954-485c-aafd-4756b19fe0ae)
+
+
+# implementation of  error handling for scenarios like invalid quantity input ; Empty cart or discount codes.
+1) Invalid QTY :- 
+![Screenshot (15)](https://github.com/user-attachments/assets/9c8b75ce-cd36-4438-acdb-8dcccc3c929d)
+
+2) Empty cart :-
+  ![Screenshot (16)](https://github.com/user-attachments/assets/3fbc01d7-86d5-4867-9c1d-43d06598f7f2)
+
+ 3) While adding invalid discount value :-
+    ![Screenshot (17)](https://github.com/user-attachments/assets/9f503a45-ae54-48a8-b08c-0697d21e1caf)
+    &
+    ![Screenshot (18)](https://github.com/user-attachments/assets/15df16d5-3457-426f-9c91-05bfbac6ebaf)
+
+
+
+
 
 # Let's find which is existed evaluation done to builded the "Build-e-commerce-shopping-cart-application---Profile.fyi" project based on the provided criteria:-
 
