@@ -7,7 +7,9 @@ Build an e-commerce shopping cart application using React. The application will 
 
 # Technical Specifications:
 Frontend Framework: ReactJS 
+
 Styling:  Plain CSS
+
 Data Source:
  Created a local JSON file containing product data (product name, image, price, category, etc.)
 
